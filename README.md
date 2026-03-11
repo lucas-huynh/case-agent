@@ -1,3 +1,7 @@
+![Python](https://img.shields.io/badge/python-3.10+-blue)
+![Streamlit](https://img.shields.io/badge/streamlit-app-red)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 # Hospital Surge Staffing Simulator
 
 An interactive AI-powered stakeholder simulation designed to teach **operations research problem formulation in healthcare operations**.
