@@ -1,0 +1,210 @@
+case_id: hospital_surge_v1
+case_version: "1.0"
+
+title: Emergency Department Surge Staffing
+short_title: ED Surge Staffing
+
+status: active
+difficulty: medium
+estimated_student_time_minutes: 20
+
+student_visible:
+  scenario_summary: |
+    You are analyzing staffing decisions in a large adult emergency department
+    that experiences unpredictable fluctuations in patient arrivals. Most nurses
+    are scheduled well in advance, but patient demand often changes closer to
+    the shift. Hospital leaders can sometimes call in additional "surge" nurses
+    on shorter notice, but doing so is more expensive and operationally harder.
+
+    Your task is to interview stakeholders, gather evidence, and determine how
+    to formulate the underlying decision problem. You are not being told in
+    advance what mathematical method is appropriate.
+
+  context: |
+    The emergency department must balance patient access, staff sustainability,
+    and financial constraints under uncertain demand. Different stakeholders care
+    about different outcomes, and no single person has the full picture.
+
+  student_goal: |
+    Speak with the stakeholders, identify relevant constraints and trade-offs,
+    and determine what information is needed to formulate an operations research
+    problem for staffing during demand surges.
+
+  deliverable_prompt: |
+    Based on the evidence you gather, propose the structure of the decision
+    problem. Identify likely decisions, objectives, constraints, uncertainties,
+    and any important state or context variables.
+
+setting:
+  institution_type: large_academic_medical_center
+  care_setting: adult_emergency_department
+  location_type: urban
+  annual_ed_visits_approx: 90000
+  average_daily_volume_approx: 245
+  shift_structure:
+    shifts_per_day: 2
+    shift_length_hours: 12
+    standard_shift_start_times:
+      - "07:00"
+      - "19:00"
+
+operational_background:
+  base_staffing_description: |
+    Most nurses are scheduled weeks in advance using a base staffing template.
+    This is cheaper and more predictable for workforce planning.
+  surge_staffing_description: |
+    Additional surge nurses may be called in on shorter notice if predicted
+    demand exceeds planned staffing. Surge staffing is more expensive and may
+    be harder to secure.
+  practical_complication: |
+    The hospital cannot assume that recommended surge staffing will always be
+    feasible to fill in real time.
+
+meeting_mechanics:
+  default_time_limit_minutes: 8
+  warning_threshold_minutes: 2
+  note_buckets:
+    - constraints
+    - objectives
+    - decisions
+    - uncertainties
+    - states
+    - transitions
+    - rewards
+    - tradeoffs
+    - evidence_gaps
+  stress_design:
+    enabled: true
+    rationale: |
+      Time pressure and limited stakeholder patience are included to simulate
+      real operational conversations under stress.
+  persona_patience_enabled: true
+
+hidden_instructor_metadata:
+  intended_problem_family:
+    primary: dynamic_programming_or_sequential_staffing
+    secondary:
+      - stochastic_capacity_planning
+      - two_stage_decision_model
+      - approximate_dynamic_programming
+  method_should_not_be_revealed_upfront: true
+  why_case_is_messy: |
+    Students are not told whether the problem is DP, stochastic programming,
+    queueing-based capacity sizing, or another OR formulation. They must infer
+    the structure from conflicting stakeholder perspectives and incomplete
+    information.
+  pedagogical_focus:
+    - problem formulation under ambiguity
+    - distinguishing uncertainty from stochasticity
+    - separating decisions from outcomes
+    - extracting hard constraints from stakeholder dialogue
+    - recognizing trade-offs across safety, cost, and operations
+  instructor_notes: |
+    This case is intended to surface a two-stage staffing decision structure:
+    base staffing decided in advance and surge staffing decided closer to the
+    shift using better information. Students do not need to derive Bellman
+    equations; the focus is on framing the problem.
+
+learning_objectives:
+  - identify the major staffing decisions in the system
+  - distinguish advance staffing decisions from real-time adjustments
+  - identify what outcomes stakeholders care about
+  - identify hard constraints versus soft goals
+  - identify what demand uncertainty exists and what information partially resolves it
+  - identify operational state variables that may matter for decision making
+  - identify why the problem may be sequential rather than one-shot
+  - formulate a mathematically tractable OR problem after stakeholder interviews
+
+success_criteria:
+  must_identify:
+    decisions:
+      - base staffing level
+      - surge staffing level
+    uncertainties:
+      - uncertain patient arrivals
+      - incomplete prediction accuracy
+    objectives:
+      - staffing cost control
+      - patient access / waiting-time control
+      - operational feasibility
+    constraints:
+      - limited nurse availability
+      - more expensive surge staffing
+      - fixed shift structure
+      - workforce burnout / competency limits
+  strong_answer_signals:
+    - recognizes two decision epochs
+    - separates forecast information from realized demand
+    - discusses trade-off between cost and service quality
+    - includes staffing feasibility, not just ideal recommendations
+    - recognizes that not all stakeholders know the same facts
+
+rubric:
+  dimensions:
+    constraints_identified:
+      description: Did the student identify hard and practical staffing constraints?
+      max_points: 5
+    objectives_identified:
+      description: Did the student identify stakeholder-specific objectives?
+      max_points: 5
+    uncertainty_identified:
+      description: Did the student identify demand uncertainty and forecast limitations?
+      max_points: 5
+    sequential_structure_identified:
+      description: Did the student recognize base vs surge staffing as separate decisions?
+      max_points: 5
+    tradeoffs_identified:
+      description: Did the student articulate safety-cost-operations trade-offs?
+      max_points: 5
+    evidence_use:
+      description: Did the student support claims with interview evidence?
+      max_points: 5
+
+persona_keys:
+  - cfo
+  - physician
+  - operations_manager
+
+recommended_progress_checks:
+  - id: pc_01
+    prompt: Have you identified what is decided before the shift versus closer to the shift?
+  - id: pc_02
+    prompt: Have you identified at least one hard operational constraint and one quality-of-care metric?
+  - id: pc_03
+    prompt: Have you identified what information becomes available closer to real time?
+  - id: pc_04
+    prompt: Have you identified at least one trade-off between cost and care quality?
+  - id: pc_05
+    prompt: Have you identified any feasibility issue that could prevent leadership from following ideal recommendations?
+
+source_documents:
+  - source_id: hu_2021_prediction_driven_surge_planning
+    label: Hu et al. Prediction-Driven Surge Planning with Application in the Emergency Department
+    source_type: research_paper
+  - source_id: hu_2023_realtime_prediction
+    label: Hu et al. Use of Real-Time Information to Predict Future Arrivals in the Emergency Department
+    source_type: research_paper
+  - source_id: hu_2025_implementation
+    label: Hu et al. Implementing a Prediction-Driven Framework for Emergency Department Nurse Staffing
+    source_type: implementation_paper
+  - source_id: aha_2025_medical_surge_guide
+    label: AHA CLEAR Strategies for Medical Surge Management During Public Health Emergencies
+    source_type: practice_guide
+  - source_id: ana_2021_surge_planning
+    label: ANA Staffing Considerations for Surge Planning and Emergency Response
+    source_type: guidance_document
+
+student_guidance:
+
+  hint_topics:
+    - patient waiting times
+    - surge staffing decisions
+    - staffing cost trade-offs
+    - demand prediction
+    - operational constraints
+
+  example_questions:
+    - "How does understaffing affect waiting time?"
+    - "How do you decide when to call surge staff?"
+    - "Why is surge staffing more expensive?"
+    - "What information helps predict patient demand?"

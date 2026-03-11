@@ -1,0 +1,281 @@
+chunks:
+
+  - id: ed_001
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: system_context
+    tags: [all, physician, operations_manager]
+    importance: high
+    text: "Emergency department crowding contributes to worse patient outcomes, lower patient satisfaction, and strain on staff morale."
+
+  - id: ed_002
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: system_context
+    tags: [all, physician, operations_manager]
+    importance: high
+    text: "Nurses are a major bottleneck resource in the emergency department, so staffing decisions strongly affect throughput and care access."
+
+  - id: ed_003
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: decision_structure
+    tags: [all, cfo, operations_manager]
+    importance: high
+    text: "Emergency departments often make most staffing decisions weeks in advance, even though actual patient demand remains uncertain."
+
+  - id: ed_004
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: decision_structure
+    tags: [all, cfo, operations_manager, physician]
+    importance: high
+    text: "A common staffing pattern is to set a base staffing level in advance and then add surge staffing closer to the shift if higher demand is anticipated."
+
+  - id: ed_005
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: timing
+    tags: [all, operations_manager]
+    importance: medium
+    text: "In the United States, emergency departments commonly schedule two 12-hour nursing shifts, typically beginning around 7 AM and 7 PM."
+
+  - id: ed_006
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: cost_structure
+    tags: [cfo, operations_manager]
+    importance: high
+    text: "Surge staffing is more expensive than base staffing because it may require overtime or agency nurses."
+
+  - id: ed_007
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: uncertainty
+    tags: [all, physician, operations_manager]
+    importance: high
+    text: "Emergency department demand can fluctuate because of weather, flu activity, and other random events that are difficult to predict far in advance."
+
+  - id: ed_008
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: uncertainty
+    tags: [all]
+    importance: high
+    text: "The staffing problem reflects a trade-off between cheaper long-term commitments made under more uncertainty and more expensive short-term commitments made with better information."
+
+  - id: ed_009
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: objective_metric
+    tags: [physician, operations_manager]
+    importance: high
+    text: "Relevant performance outcomes include patient waiting time and the rate of patients who leave without being seen."
+
+  - id: ed_010
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: implementation
+    tags: [operations_manager, cfo]
+    importance: medium
+    text: "Theoretical work suggests surge staffing is most valuable when uncertainty in demand is large relative to ordinary system randomness."
+
+  - id: ed_011
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: practical_result
+    tags: [cfo, operations_manager, physician]
+    importance: high
+    text: "In simulation for a partner emergency department, a prediction-driven staffing policy reduced annual staffing cost while maintaining timely access to care."
+
+  - id: ed_012
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: practical_result
+    tags: [cfo]
+    importance: high
+    text: "One reported implementation analysis suggested annual staffing cost savings on the order of millions of dollars relative to benchmark approaches."
+
+  - id: ed_013
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: local_setting
+    tags: [all, physician, operations_manager]
+    importance: medium
+    text: "A studied partner emergency department treated more than 90,000 patients annually, making even modest staffing improvements financially meaningful."
+
+  - id: ed_014
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: local_setting
+    tags: [physician, operations_manager]
+    importance: medium
+    text: "In one partner site, average patient waiting time was close to an hour and left-without-being-seen was a nontrivial operational concern."
+
+  - id: ed_015
+    source_id: hu_2021_prediction_driven_surge_planning
+    category: operational_reality
+    tags: [operations_manager, physician]
+    importance: high
+    text: "Transient effects matter because the next shift may inherit a backlog of patients from the previous shift rather than starting empty."
+
+  - id: ed_016
+    source_id: hu_2023_realtime_prediction
+    category: prediction
+    tags: [all, operations_manager]
+    importance: high
+    text: "Real-time information can improve prediction accuracy for future emergency department arrivals relative to models that only use coarse historical patterns."
+
+  - id: ed_017
+    source_id: hu_2023_realtime_prediction
+    category: prediction_inputs
+    tags: [operations_manager]
+    importance: medium
+    text: "Useful real-time predictors include recent arrival counts, weather information, search trends, and concurrent patient comorbidity information."
+
+  - id: ed_018
+    source_id: hu_2023_realtime_prediction
+    category: forecasting_logic
+    tags: [all]
+    importance: high
+    text: "The value of improved short-term prediction is not purely predictive; it matters because it can support better staffing decisions closer to real time."
+
+  - id: ed_019
+    source_id: hu_2023_realtime_prediction
+    category: prediction_inputs
+    tags: [operations_manager]
+    importance: medium
+    text: "Arrival counts one day earlier, one week earlier, seasonal patterns, holidays, and weather all contributed useful forecasting signal."
+
+  - id: ed_020
+    source_id: hu_2023_realtime_prediction
+    category: workforce_reality
+    tags: [cfo, operations_manager]
+    importance: medium
+    text: "Because overtime and surge staff are more expensive and less convenient for nurses, better short-term prediction can have meaningful staffing value."
+
+  - id: ed_021
+    source_id: hu_2025_implementation
+    category: implementation
+    tags: [all]
+    importance: high
+    text: "A real-world pilot implemented a prediction-driven staffing framework in a large adult emergency department rather than studying it only theoretically."
+
+  - id: ed_022
+    source_id: hu_2025_implementation
+    category: local_setting
+    tags: [all, physician, operations_manager]
+    importance: medium
+    text: "In one implementation setting, the emergency department averaged roughly 245 patients per day."
+
+  - id: ed_023
+    source_id: hu_2025_implementation
+    category: cost_structure
+    tags: [cfo]
+    importance: high
+    text: "In the pilot evaluation, the new staffing framework reduced hourly staffing costs by roughly $162 without materially worsening most throughput measures."
+
+  - id: ed_024
+    source_id: hu_2025_implementation
+    category: quality_metric
+    tags: [physician, operations_manager]
+    importance: high
+    text: "Most throughput metrics remained broadly stable under the new staffing framework, although waiting time was sensitive to staffing deviations."
+
+  - id: ed_025
+    source_id: hu_2025_implementation
+    category: staffing_deviation
+    tags: [physician, operations_manager, cfo]
+    importance: high
+    text: "A deficit of one nurse per hour relative to the recommended staffing level was associated with about a two-minute increase in patient waiting time."
+
+  - id: ed_026
+    source_id: hu_2025_implementation
+    category: staffing_deviation
+    tags: [physician, operations_manager]
+    importance: high
+    text: "When actual staffing fell more than 20% below the recommendation, waiting time increased further."
+
+  - id: ed_027
+    source_id: hu_2025_implementation
+    category: feasibility
+    tags: [operations_manager, cfo]
+    importance: high
+    text: "A major implementation challenge was that nursing leadership could not always find enough nurses to fill recommended surge spots on short notice."
+
+  - id: ed_028
+    source_id: hu_2025_implementation
+    category: workforce
+    tags: [operations_manager, cfo]
+    importance: high
+    text: "Operational performance depends not just on what staffing is recommended, but also on whether the department can actually recruit or mobilize staff in time."
+
+  - id: ed_029
+    source_id: hu_2025_implementation
+    category: workforce
+    tags: [operations_manager, physician]
+    importance: medium
+    text: "There can be trade-offs between reducing travel nurse reliance, maintaining a stable workforce, and preserving flexibility during surges."
+
+  - id: ed_030
+    source_id: hu_2025_implementation
+    category: fairness
+    tags: [operations_manager, physician]
+    importance: medium
+    text: "Prediction-driven staffing may affect burnout and job satisfaction positively or negatively depending on how fairly surge calls and extra work are distributed."
+
+  - id: ed_031
+    source_id: aha_2025_medical_surge_guide
+    category: systems_framework
+    tags: [operations_manager, all]
+    importance: high
+    text: "Medical surge planning extends beyond staffing alone and is often framed across staffing, supply, space, and systems."
+
+  - id: ed_032
+    source_id: aha_2025_medical_surge_guide
+    category: staffing_strategy
+    tags: [operations_manager, physician]
+    importance: medium
+    text: "Tiered staffing models can stretch scarce expert resources by having experienced clinicians supervise teams with mixed experience levels."
+
+  - id: ed_033
+    source_id: aha_2025_medical_surge_guide
+    category: staffing_strategy
+    tags: [operations_manager]
+    importance: medium
+    text: "Float pools, activation triggers, and staffing command structures can improve real-time responsiveness during surges."
+
+  - id: ed_034
+    source_id: aha_2025_medical_surge_guide
+    category: systems_strategy
+    tags: [operations_manager]
+    importance: medium
+    text: "Capacity command centers can use real-time data on patient volume, bed status, and acuity to guide staffing and deployment decisions during a surge."
+
+  - id: ed_035
+    source_id: ana_2021_surge_planning
+    category: ethics
+    tags: [physician, operations_manager, all]
+    importance: high
+    text: "Crisis standards of care emphasize fairness, duty to care, stewardship of scarce resources, transparency, and accountability."
+
+  - id: ed_036
+    source_id: ana_2021_surge_planning
+    category: workforce_safety
+    tags: [operations_manager, physician]
+    importance: high
+    text: "Safe surge planning requires attention to staff competency, scope of practice, cross-training, and the risk of burnout or moral distress."
+
+  - id: ed_037
+    source_id: ana_2021_surge_planning
+    category: management_practice
+    tags: [operations_manager]
+    importance: medium
+    text: "Bedside nursing leaders should be involved in staffing decisions because they have critical knowledge about real workload and unit conditions."
+
+  - id: ed_038
+    source_id: ana_2021_surge_planning
+    category: staffing_strategy
+    tags: [operations_manager, physician]
+    importance: medium
+    text: "Team-based care, cross-training, and just-in-time training can expand staffing flexibility, but only if roles and competencies are clearly defined."
+
+  - id: ed_039
+    source_id: ana_2021_surge_planning
+    category: communications
+    tags: [operations_manager]
+    importance: medium
+    text: "Hospitals often use tiered status communication and repeated shift-level updates so staff understand current capacity conditions and expectations."
+
+  - id: ed_040
+    source_id: hu_2025_implementation
+    category: sequential_decision
+    tags: [all]
+    importance: high
+    text: "The staffing problem is not purely static because decisions made earlier constrain what can be adjusted later, and later decisions use improved information."
