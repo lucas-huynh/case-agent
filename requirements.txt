@@ -1,0 +1,10 @@
+streamlit
+sentence-transformers
+faiss-cpu
+torch
+numpy
+pandas
+scikit-learn
+pyyaml
+requests
+tqdm
